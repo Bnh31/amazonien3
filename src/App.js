@@ -1,8 +1,10 @@
 import {Routes,Route} from 'react-router-dom'
-import Home from './routes/home.component';
+import Home from './routes/home/home.component';
+import Navigation from './routes/navigation/navigation.component';
+import SignIn from './routes/sign/sign.component';
 import {Fragment} from 'react'
 import {Link,Outlet} from 'react-router-dom'
-import Navigation from './routes/navigation.component';
+
 const Shop =()=>{
   return(
     <Fragment>
@@ -21,6 +23,9 @@ const App = () => {
         <Route path='' element={<Navigation/>}/>
       </Route>
       <Route path='/shop' element={<Shop/>}>
+        <Route path='' element={<Navigation/>}/>
+      </Route>
+      <Route path='/sign' element={<SignIn/>}>
         <Route path='' element={<Navigation/>}/>
       </Route>
 
